@@ -4,7 +4,7 @@
   "description": "A discord bot account generator made by Rdimo・https://github.com/Rdimo/GenBot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "Rdimo#6969",
   "license": "MIT",
@@ -13,7 +13,6 @@
     "chance": "^1.1.7",
     "discord.js": "^12.5.1",
     "express": "^4.17.1",
-    "fs": "0.0.1-security",
     "kahoot.js-updated": "^2.4.0",
     "node-fetch": "^2.6.1",
     "randomstring": "^1.2.1",

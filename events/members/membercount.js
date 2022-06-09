@@ -1,12 +1,10 @@
 module.exports = (client) => {
-  const membercountchannel = '845356852979433472' //channel id (recommend to have this id as a voice channel id)
-  const updateMembers = (guild) => {
-      const channel = guild.channels.cache.get(membercountchannel)
-      channel.setName(`Members: ${guild.memberCount.toLocaleString()}`)
-  }
-  client.on('guildMemberAdd', (member) => updateMembers(member.guild))
-  client.on('guildMemberRemove', (member) => updateMembers(member.guild))
+  const myGuild = client.guilds.cache.get(client.config.owner.guild);
+  const memberCountChannel = myGuild.channels.cache.get(client.channel.memberCounter);
 
-  const guild = client.guilds.cache.get('842460824798756884') //guild id
-  updateMembers(guild)
-}
+  setInterval(() => {
+    const memberCount = myGuild.members.cache.filter((member) => !member.user.bot).size.toLocaleString();
+
+    memberCountChannel.setName(`👥〢${memberCount}`); //change this to whatever you want | ${memberCount} is the member amount
+  }, 30000); // every 30 seconds | can be lower/higher but the lower the interval is the more chance you have of getting your bot ratelimited
+};
