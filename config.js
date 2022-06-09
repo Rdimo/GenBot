@@ -15,7 +15,7 @@ module.exports = {
 
   links: {
     HandlerInvite: 'https://discord.com/api/oauth2/authorize?client_id=881558367687032832&permissions=1551363318&scope=bot',
-    website: 'https://rdimo.github.io/CheatAway/',
+    website: 'https://Cheataway.com',
     GenIcon: 'https://img.icons8.com/color/48/000000/in-progress--v3.gif', //G.I.F icon for the generator embed here
   },
 

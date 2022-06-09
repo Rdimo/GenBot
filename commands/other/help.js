@@ -3,9 +3,9 @@ const fs = require("fs");
 module.exports.run = (client, message, args) => {
   if (!args.length) {
     const embed = new MessageEmbed()
-      .setColor(`${client.config.colors.Default}`)
+      .setColor(`${client.color.Default}`)
       .addField(`${client.user.username}\'s Help Page`, `\nFor more information on a Specific command, run \`${client.config.PREFIX}help [command name | alias]\`\n**[Invite](${client.config.links.HandlerInvite})・[Website](${client.config.links.website})**`)
-      .setFooter(`Total Commands・${client.commands.size - 1}・https://github.com/Rdimo/GenBot`, `${client.user.displayAvatarURL()}`);
+      .setFooter(`Total Commands・${client.commands.size - 1}`, `${client.user.displayAvatarURL()}`);
       let twitchCmds = '';
       let NitroCmds = '';
       let generatorCmds = '';
@@ -15,10 +15,10 @@ module.exports.run = (client, message, args) => {
       fs.readdirSync('./commands/Nitro').forEach((file) => NitroCmds += `${client.config.PREFIX}${file.slice(0, file.lastIndexOf('.'))} `);
       fs.readdirSync('./commands/other').forEach((file) => otherCmds += `${client.config.PREFIX}${file.slice(0, file.lastIndexOf('.'))} `);
       embed.addFields(
-        { name: `${client.config.emojis.Generator}・Generator`, value: `${'`' +  generatorCmds + '`'}`},
-        { name: `${client.config.emojis.Twitch}・Twitch`, value: `${'`' +  twitchCmds + '`'}`},
-        { name: `${client.config.emojis.Nitro}・Nitro`, value: `${'`' +  NitroCmds + '`'}`},
-        { name: `${client.config.emojis.Other}・Other`, value: `${'`' +  otherCmds + '`'}`})
+        { name: `${client.emoji.Generator}・Generator`, value: `${'`' +  generatorCmds + '`'}`},
+        { name: `${client.emoji.Twitch}・Twitch`, value: `${'`' +  twitchCmds + '`'}`},
+        { name: `${client.emoji.Nitro}・Nitro`, value: `${'`' +  NitroCmds + '`'}`},
+        { name: `${client.emoji.Other}・Other`, value: `${'`' +  otherCmds + '`'}`})
     return message.channel.send(embed);
   } else {
     const command = client.commands.get(args[0]) || client.commands.find(cmd => cmd.help.aliases && cmd.help.aliases.includes(args[0])); 
@@ -26,7 +26,7 @@ module.exports.run = (client, message, args) => {
       return message.channel.sendErrorMessage('Command not found')
     }
     const embed = new MessageEmbed()
-      .setColor(`${client.config.colors.Default}`)
+      .setColor(`${client.color.Default}`)
       .setAuthor(`${client.config.PREFIX}${command.help.name}`, `${client.user.displayAvatarURL()}`)
       .addField("**__Description:__**", `${command.help.description} | \`${command.help.cooldown}s\` Cooldown`)
       .addField("**__Usage:__**", command.help.usage ? `${client.config.PREFIX}${command.help.name} ${command.help.usage}` : `${client.config.PREFIX}${command.help.name}`, true)
@@ -47,10 +47,4 @@ module.exports.help = {
   cooldown: 7,
   usage: '[command_name]',
   example: ["help", "help ping"],
-  isUserAdmin: false,
-  moderator: false,
-  args: false,
-  userPermissions: [],
-  botPermissions: [],
-  subcommands: []
 };

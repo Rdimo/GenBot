@@ -1,4 +1,4 @@
-<p align= center</p><a href="https://rdimo.github.io/CheatAway/" target="_blank"><img src="https://i.imgur.com/cpjB0Ae.png" alt="HazardNuker"></a>
+<p align= center</p><a href="https://Cheataway.com" target="_blank"><img src="https://i.imgur.com/pnhr82j.png" alt="HazardNuker"></a>
 
 <img src="https://img.shields.io/github/watchers/Rdimo/Account-Generator-Discord-bot?color=808080&label=Watchers" alt="shield.png"></a>
 <img src="https://img.shields.io/github/stars/Rdimo/Account-Generator-Discord-bot?color=808080&label=Stars" alt="shield.png"></a>
@@ -8,7 +8,7 @@ Love ❌
 code ✅
 
 ## 🎭・GenBot
-> Made this bot for my server [CheatAway](https://rdimo.github.io/CheatAway) to generate account simply by just typing a command like !netflix 
+> Made this bot for my server [CheatAway](https://Cheataway.com) to generate account simply by just typing a command like !netflix                             
 > It also has a nitro generator, admin command, twitch follow commands, member counter + more other commands like !help and !help [command]
 
 ### 🔖・Requirements
@@ -37,6 +37,11 @@ Token: {
     Discord: 'Your_discord_bot_token',
 },
 ```
+after that is done you need to allow intents for the bot to work which is done by going to [discord portal](https://ptb.discord.com/developers/)
+enable these 2 options:
+
+ <img alt="intents" src="https://cdn.discordapp.com/attachments/828047793619861557/888421741590884372/Screenshot_2021-09-17_154808.png">
+
 When your done you can do `node index.js` to start the bot.
 
 ## 🔰・Features
@@ -52,12 +57,6 @@ module.exports.help = {
   cooldown: 7, //cooldown of the command
   usage: '[command_name]', //usage example of command
   example: ["help", "help ping"], //example on how to use command
-  isUserAdmin: false, //if they need to be admin to use
-  moderator: false, //if they need to be moderator
-  args: false, //if the command should have any args
-  userPermissions: [], //the permission the user needs to have in order to use the command
-  botPermissions: [], //the permission the bot needs to have in order for the commands to work properly
-  subcommands: [] // help for subcommands in case you want to use
 };
 ```
 
@@ -86,10 +85,10 @@ If you want to have membercounter enabled go into events/members/membercount.js 
 #### 🧬・Admin
 The only Admin command right now is that you can make the bot dm someone a message of choice
 
-
-|🌟Star This Repository If You Liked GenBot!|
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+|🌟Star This Repository If You Liked GenBot!| 
 |-------------------------------------------|
 
-<a href="https://rdimo.github.io/CheatAway/" target="_blank"><img src="https://discordapp.com/api/guilds/864857288584724500/widget.png?style=banner2" alt="Cheataway"/></a>
+<a href="https://Cheataway.com" target="_blank"><img src="https://discordapp.com/api/guilds/864857288584724500/widget.png?style=banner2" alt="Cheataway"/></a>
 
-Created by Rdimo#6969 | https://rdimo.github.io/CheatAway
+Created by Rdimo#6969 | https://Cheataway.com

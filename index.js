@@ -9,6 +9,7 @@ const client = new Client({
 ['commands', 'cooldowns'].forEach((x) => (client[x] = new Collection()));
 loadCommands(client);
 loadEvents(client);
+require('./util/anti-crash');
 
 client.config = require('./config');
 client.emoji = client.config.emojis;

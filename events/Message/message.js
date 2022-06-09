@@ -9,16 +9,17 @@ module.exports = async (client, message) => {
   const commandName = args.shift().toLowerCase();
   const command = client.commands.get(commandName) || client.commands.find((cmd) => cmd.help.aliases && cmd.help.aliases.includes(commandName));
 
-  //---------------BLACKLIST---------------
-  const blacklistedUser = client.config.blacklistedUsers.ID;
-  let listed = false;
-  blacklistedUser.forEach((id) => {
-    if (message.author.id === id) listed = true;
-  });
-
-  if (listed === true) return message.channel.sendErrorMessage(`You are blacklisted from ${client.user.username}`);
-  //---------------COOLDOWN---------------
-  if (!client.cooldowns.has(command.help.name)) {
+//---------------BLACKLIST---------------
+  const blacklistedUser = client.config.blacklistedUsers.ID
+      let listed = false
+      blacklistedUser.forEach(id => {
+          if (message.author.id === id) listed = true
+      })
+  
+      if (listed === true) return message.channel.sendErrorMessage(`You are blacklisted from ${client.user.username}`)
+      
+//---------------COOLDOWN---------------
+if (!client.cooldowns.has(command.help.name)) {
     client.cooldowns.set(command.help.name, new Collection());
   }
   const timeNow = Date.now();

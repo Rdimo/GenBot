@@ -1,13 +1,22 @@
 {
-  "name": "GenBot",
+  "name": "genbot",
   "version": "1.0.0",
-  "description": "A discord bot account generator made by Rdimo・https://github.com/Rdimo/GenBot",
+  "description": "A discord bot account generator made by Rdimo・https://Cheataway.com",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rdimo/GenBot.git"
+  },
+  "keywords": [],
   "author": "Rdimo#6969",
-  "license": "MIT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rdimo/GenBot/issues"
+  },
+  "homepage": "https://github.com/Rdimo/GenBot#readme",
   "dependencies": {
     "chalk": "^4.1.0",
     "chance": "^1.1.7",
